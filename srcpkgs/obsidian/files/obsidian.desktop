@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Obsidian
+Comment=Powerful Markdown Note-taking App
+Exec=obsidian %u
+Icon=obsidian.png
+Terminal=false
+Type=Application
+Categories=Office;TextEditor;
+MimeType=x-scheme-handler/obsidian;
+StartupWMClass=obsidian

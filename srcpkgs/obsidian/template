@@ -1,0 +1,19 @@
+pkgname=obsidian
+version=1.12.7
+revision=1
+archs="x86_64"
+hostmakedepends="tar"
+short_desc="A powerful knowledge base that works on top of a local folder of plain text Markdown files."
+maintainer="kveld9 <kveld9@disroot.org>"
+license="custom:Commercial"
+homepage="https://github.com/obsidianmd/obsidian-releases"
+distfiles="https://github.com/obsidianmd/obsidian-releases/releases/download/v${version}/obsidian-${version}.tar.gz"
+checksum=fcbe08b111d9c1fdb09b9c08952b06e1c829c62163eba2584c4b4ec859be079d
+
+do_install() {
+    install -dm755 "${DESTDIR}/opt/Obsidian" "${DESTDIR}/usr/bin" "${DESTDIR}/usr/share/applications" "${DESTDIR}/usr/share/pixmaps"
+    tar -xzf ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${pkgname}-${version}.tar.gz -C "${DESTDIR}/opt/Obsidian" --strip-components=1
+    ln -sf /opt/Obsidian/obsidian ${DESTDIR}/usr/bin/obsidian
+    vinstall "${FILESDIR}/obsidian.desktop" 644 usr/share/applications/
+    vinstall "resources/icon.png" 644 usr/share/pixmaps/obsidian.png
+}
