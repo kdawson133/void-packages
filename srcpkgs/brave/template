@@ -1,6 +1,6 @@
 # Template file for 'brave'
 pkgname=brave
-version=1.91.180
+version=1.93.129
 revision=1
 archs="x86_64 aarch64"
 create_wrksrc=yes
@@ -44,11 +44,11 @@ _baseurl="https://github.com/brave/brave-browser/releases/download/v${version}"
 case "$XBPS_TARGET_MACHINE" in
 	x86_64)
 		_arch_class=linux-amd64
-		checksum=6d5349a7c02043720b9bd655eddea85691813a309bc474485211dd66730d5e5f
+		checksum=5a0ef0629ca7f574d5e105071bd77f2e12c1cf0a9c100ab5b6967b915287a525
 		;;
 	aarch64)
 		_arch_class=linux-arm64
-		checksum=2a313cdfd7c17dde952f7431ed6085837c39c29ddd30acec1535ebc2749ed81f
+		checksum=b03616b31662f6d2f7863d397834a5c865096cd62a8035fab56104ae49c26fbd
 		;;
 esac
 
@@ -122,3 +122,4 @@ EOF
 	# License
 	vlicense "${DESTDIR}/opt/brave/LICENSE"
 }
+
